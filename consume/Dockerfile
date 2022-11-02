@@ -1,5 +1,6 @@
 FROM python:3.7-alpine
-WORKDIR .
+RUN pwd
+WORKDIR ./consume
 RUN apk add --no-cache gcc musl-dev linux-headers
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
