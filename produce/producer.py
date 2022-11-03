@@ -3,7 +3,7 @@ from faker import Faker
 import json
 import time
 import logging
-import random 
+import random
 
 fake = Faker()
 
@@ -35,7 +35,7 @@ def main():
            }
         m=json.dumps(data)
         p.poll(1)
-        p.produce('user-tracker', m.encode('utf-8'),callback=receipt)
+        p.produce('user-tracker', m.encode('utf-8'), callback=receipt)
         p.flush()
         time.sleep(3)
 
