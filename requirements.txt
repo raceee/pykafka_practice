@@ -1,2 +1,2 @@
-confluent-kafk
+confluent-kafka
 Faker
