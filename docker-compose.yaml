@@ -30,6 +30,16 @@ services:
       KAFKA_JMX_PORT: 9101
       KAFKA_JMX_HOSTNAME: localhost
   
+  kafdrop:
+    image: obsidiandynamics/kafdrop:latest
+    depends_on:
+      - broker
+    ports:
+      - 19000:9000
+    environment:
+      KAFKA_BROKERCONNECT: broker:29092
+
+
   consumer:
     build: ./consume
     # ports:
