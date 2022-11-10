@@ -13,7 +13,7 @@ logging.basicConfig(format='%(asctime)s %(message)s',
                     filemode='w')
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-p=Producer({'bootstrap.servers':'localhost:9092'})
+p=Producer({'bootstrap.servers':'broker:29092'})
 print('Kafka Producer has been initiated...')
 
 def receipt(err,msg):

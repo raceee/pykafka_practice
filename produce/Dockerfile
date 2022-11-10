@@ -1,9 +1,8 @@
-FROM python:3.7-alpine
-RUN pwd
-WORKDIR /
-RUN apk add --no-cache gcc musl-dev linux-headers
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
-EXPOSE 9092
-COPY . .
-CMD ["python", "./produce/producer.py"]
+FROM python:3.9
+RUN apt-get update && apt-get install -y --no-install-recommends gcc git libssl-dev g++ make && cd /tmp
+RUN git clone https://github.com/edenhill/librdkafka && cd librdkafka && git checkout tags/v1.9.0
+RUN cd librdkafka && ./configure && make && make install && ldconfig
+RUN pip install confluent-kafka
+RUN pip install Faker
+COPY producer.py /
+CMD ["python", "/producer.py"]
