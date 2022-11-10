@@ -4,6 +4,5 @@ RUN git clone https://github.com/edenhill/librdkafka && cd librdkafka && git che
 RUN cd librdkafka && ./configure && make && make install && ldconfig
 RUN pip install confluent-kafka
 RUN pip install Faker
-EXPOSE 9092
 COPY producer.py /
 CMD ["python", "/producer.py"]

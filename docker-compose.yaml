@@ -30,14 +30,14 @@ services:
       KAFKA_JMX_PORT: 9101
       KAFKA_JMX_HOSTNAME: localhost
   
-  # consumer:
-  #   build: ./consume
-  #   ports:
-  #     - "29092:29092"
-  #     - "9092:9092"
-  #     - "9101:9101"
+  consumer:
+    build: ./consume
+    # ports:
+    #   - "29092:29092"
+    #   - "9092:9092"
+    #   - "9101:9101"
 
   producer:
     build: ./produce
-    ports:
-      - "80:80"
+    # ports:
+    #   - "80:80"
