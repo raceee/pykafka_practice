@@ -39,15 +39,8 @@ services:
     environment:
       KAFKA_BROKERCONNECT: broker:29092
 
-
   consumer:
     build: ./consume
-    # ports:
-    #   - "29092:29092"
-    #   - "9092:9092"
-    #   - "9101:9101"
 
   producer:
     build: ./produce
-    # ports:
-    #   - "80:80"
