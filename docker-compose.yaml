@@ -44,3 +44,6 @@ services:
 
   producer:
     build: ./produce
+  
+  procon:
+    build: ./pc
